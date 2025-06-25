@@ -182,7 +182,7 @@ def genetic_algorithm(cities: list[City]) -> tuple[list[City], float]:
         child_dists, _ = compute_fitnesses(children, dist_matrix, city_index)
         population = next_generation(population, parent_dists, children, child_dists, ELITISM_SIZE)
 
-         # Računamo distance za sve rute
+        # Računamo distance za sve rute
         distances = []
         for p in population:
             d = total_distance(p, dist_matrix, city_index)
