@@ -1,6 +1,7 @@
 import random
 from .City import *
 from typing import NoReturn
+import matplotlib.pyplot as plt
 
 
 def initial_population(cities: list[City], population_size: int) -> list[list[City]]:
@@ -116,7 +117,7 @@ def mutate(path: list[City], mutation_rate: float) -> list[City]:
     return path
 
 
-def next_generation(parents: list[list[City]], parent_dists: list[float], children: list[list[City]], child_dists: list[float], elite_size: int) -> list[list[City]]:
+def next_generation(parents: list[list[City]], parent_dists: list[float], children: list[list[City]], child_dists: list[float], elitism_size: int) -> list[list[City]]:
     """
     Formira novu generaciju tako što zadržava najbolje roditelje (elitizam),
     a ostatak popunjava najboljim potomstvom.
@@ -125,11 +126,11 @@ def next_generation(parents: list[list[City]], parent_dists: list[float], childr
 
     parents_with_dists = list(zip(parent_dists, parents))
     parents_with_dists.sort(key=lambda x: x[0])
-    elites = [individual for _, individual in parents_with_dists[:elite_size]]
+    elitism_parents = [individual for _, individual in parents_with_dists[:elitism_size]]
     children_with_dists = list(zip(child_dists, children))
     children_with_dists.sort(key=lambda x: x[0])
-    top_children = [individual for _, individual in children_with_dists[:INITIAL_POPULATION_SIZE - elite_size]]
-    next_gen = elites + top_children
+    top_children = [individual for _, individual in children_with_dists[:INITIAL_POPULATION_SIZE - elitism_size]]
+    next_gen = elitism_parents + top_children
 
     return next_gen
 
@@ -217,3 +218,18 @@ def run(filename: str) -> NoReturn:
     best, best_distance = genetic_algorithm(cities)
     print("Najbolja putanja:", [city.i for city in best])
     print("Najkraća distanca:", best_distance)
+
+    x = [city.x for city in best]
+    y = [city.y for city in best]
+
+    plt.figure(figsize=(8, 6))
+    plt.plot(x, y, marker='o', linestyle='-', color='blue')
+
+    for city in best:
+        plt.text(city.x, city.y, str(city.i), fontsize=9, ha='right')
+    
+    plt.title(f"Najbolja ruta - dužina: {best_distance:.4f}")
+    plt.xlabel("X koordinata")
+    plt.ylabel("Y koordinata")
+    plt.grid(True)
+    plt.show()
