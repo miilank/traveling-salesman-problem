@@ -54,7 +54,7 @@ def tournament_selection(population: list[list[City]], normalized_fitnesses: lis
 
 def ordered_crossover(parent1: list[City], parent2: list[City]) -> list[City]:
     """
-    Crossover (ukrštanje) po metodi "ordered crossover" (OX)
+    Crossover (ukrštanje) roditelja u cilju stvaranja potomka
     """
     # uklanjamo posljednji grad da ne bude duplikata
     parent1 = parent1[:-1]
