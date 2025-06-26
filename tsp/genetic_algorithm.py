@@ -137,7 +137,7 @@ def next_generation(parents: list[list[City]], parent_dists: list[float], childr
 
 def genetic_algorithm(cities: list[City]) -> tuple[list[City], float]:
     """
-    Glavna petlja genetskog algoritma
+    Glavna metoda genetskog algoritma
     """
     dist_matrix, city_index = compute_distance_matrix(cities)
     population = initial_population(cities, POPULATION_SIZE)
@@ -150,7 +150,7 @@ def genetic_algorithm(cities: list[City]) -> tuple[list[City], float]:
     # pronalazimo indeks najmanje distance
     min_index = distances.index(min(distances))
 
-    # uzimamo najbolju rutu po toj distanci
+    # uzimamo najbolju rutu
     best = population[min_index]
 
     best_distance = total_distance(best, dist_matrix, city_index)
