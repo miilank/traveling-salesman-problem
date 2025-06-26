@@ -129,7 +129,7 @@ def next_generation(parents: list[list[City]], parent_dists: list[float], childr
     elitism_parents = [individual for _, individual in parents_with_dists[:elitism_size]]
     children_with_dists = list(zip(child_dists, children))
     children_with_dists.sort(key=lambda x: x[0])
-    top_children = [individual for _, individual in children_with_dists[:INITIAL_POPULATION_SIZE - elitism_size]]
+    top_children = [individual for _, individual in children_with_dists[:POPULATION_SIZE - elitism_size]]
     next_gen = elitism_parents + top_children
 
     return next_gen
@@ -140,7 +140,7 @@ def genetic_algorithm(cities: list[City]) -> tuple[list[City], float]:
     Glavna petlja genetskog algoritma
     """
     dist_matrix, city_index = compute_distance_matrix(cities)
-    population = initial_population(cities, INITIAL_POPULATION_SIZE)
+    population = initial_population(cities, POPULATION_SIZE)
     # Računamo distance za sve rute
     distances = []
     for p in population:
@@ -161,10 +161,10 @@ def genetic_algorithm(cities: list[City]) -> tuple[list[City], float]:
         parent_dists, normalized_fitnesses = compute_fitnesses(population, dist_matrix, city_index)
         best_dist = min(parent_dists)
 
-        print(f"Generacija {gen+1}: Najbolja = {best_dist:.2f}")
+        print(f"Generation {gen+1}: The shortest distance = {best_dist:.2f}")
 
         children = []
-        while len(children) < INITIAL_POPULATION_SIZE - ELITISM_SIZE:
+        while len(children) < POPULATION_SIZE - ELITISM_SIZE:
             p1 = tournament_selection(population, normalized_fitnesses)
             p2 = tournament_selection(population, normalized_fitnesses)
 
@@ -174,7 +174,7 @@ def genetic_algorithm(cities: list[City]) -> tuple[list[City], float]:
             children.append(child1)
 
             # Dijete 2
-            if len(children) < INITIAL_POPULATION_SIZE - ELITISM_SIZE:
+            if len(children) < POPULATION_SIZE - ELITISM_SIZE:
                 child2 = ordered_crossover(p2, p1)
                 child2 = mutate(child2, mutation_rate)
                 children.append(child2)
@@ -205,7 +205,7 @@ def genetic_algorithm(cities: list[City]) -> tuple[list[City], float]:
             no_improvement += 1
 
         if no_improvement >= MAX_STAGNATION:
-            print(f"Rano zaustavljanje u generaciji {gen+1}")
+            print(f"An early stop in a generation {gen+1}")
             break
 
     return best, best_distance
@@ -216,8 +216,8 @@ def run(filename: str) -> NoReturn:
     """
     cities = load_cities(filename)
     best, best_distance = genetic_algorithm(cities)
-    print("Najbolja putanja:", [city.i for city in best])
-    print("Najkraća distanca:", best_distance)
+    print("The best path:", [city.i for city in best])
+    print("The shortest distance:", best_distance)
 
     x = [city.x for city in best]
     y = [city.y for city in best]
@@ -228,8 +228,8 @@ def run(filename: str) -> NoReturn:
     for city in best:
         plt.text(city.x, city.y, str(city.i), fontsize=9, ha='right')
     
-    plt.title(f"Najbolja ruta - dužina: {best_distance:.4f}")
-    plt.xlabel("X koordinata")
-    plt.ylabel("Y koordinata")
+    plt.title(f"The best path - distance: {best_distance:.4f}")
+    plt.xlabel("X coordinate")
+    plt.ylabel("Y coordinate")
     plt.grid(True)
     plt.show()
