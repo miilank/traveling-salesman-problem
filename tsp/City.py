@@ -57,7 +57,7 @@ def compute_distance_matrix(cities: list[City]) -> tuple[list[list[float]], dict
 
 def total_distance(path: list[City], dist_matrix: list[list[float]], city_index: dict[City, int]) -> float:
     """
-    Računa ukupnu dužinu zadate putanje kroz gradove
+    Računa ukupnu dužinu zadate putanje kroz gradove 
     """
     total = 0.0
 
