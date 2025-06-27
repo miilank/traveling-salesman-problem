@@ -66,14 +66,14 @@ Ovaj projekat se sastoji od sljedećih klasa i metoda:
 
 ### 🧪 Parametri algoritma
 
-| Parametar                   | Vrednost | Opis                                  |
-| --------------------------- | -------- | ------------------------------------- |
-| `POPULATION_SIZE`           | 700      | Broj jedinki u populaciji             |
-| `TOTAL_GENERATIONS`         | 600      | Maksimalan broj generacija            |
-| `MUTATION_RATE`             | 0.04     | Vjerovatnoća mutacije                 |
-| `ELITISM_SIZE`              | 4        | Broj najboljih jedinki koje se čuvaju |
-| `MAX_STAGNATION`            | 200      | Maks. generacija bez poboljšanja      |
-| `TOURNAMENT_SELECTION_SIZE` | 5        | Broj učesnika u turnirskoj selekciji  |
+| Parametar                   | Vrijednost | Opis                                  |
+| --------------------------- | ---------- | ------------------------------------- |
+| `POPULATION_SIZE`           | 700        | Broj jedinki u populaciji             |
+| `TOTAL_GENERATIONS`         | 600        | Maksimalan broj generacija            |
+| `MUTATION_RATE`             | 0.04       | Vjerovatnoća mutacije                 |
+| `ELITISM_SIZE`              | 4          | Broj najboljih jedinki koje se čuvaju |
+| `MAX_STAGNATION`            | 200        | Maks. generacija bez poboljšanja      |
+| `TOURNAMENT_SELECTION_SIZE` | 5          | Broj učesnika u turnirskoj selekciji  |
 
 ---
 
