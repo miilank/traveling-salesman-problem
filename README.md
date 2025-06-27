@@ -64,7 +64,7 @@ Ovaj projekat se sastoji od sljedećih klasa i metoda:
 
 ---
 
-## 🧪 Parametri algoritma
+### 🧪 Parametri algoritma
 
 | Parametar                   | Vrednost | Opis                                  |
 | --------------------------- | -------- | ------------------------------------- |
@@ -77,7 +77,7 @@ Ovaj projekat se sastoji od sljedećih klasa i metoda:
 
 ---
 
-## 📈 Rezultati i zaključak
+### 📈 Rezultati i zaključak
 
 Najbolja pronađena distanca: `7544.37`
 ![Najbolje rješenje](img/best_solution.png) <br>
@@ -98,13 +98,13 @@ Ovo potvrđuje da algoritam pronalazi dobra približna rješenja sa vrlo malom v
 
 ---
 
-## 🖼️ Vizualizacija
+### 🖼️ Vizualizacija
 
 Na kraju izvršavanja algoritma, najbolja ruta se prikazuje grafički, kako je prikazano na slici. Gradovi su označeni brojevima, a linije povezuju gradove redosledom obilaska.
 
 ---
 
-## 📂 Kako pokrenuti
+### 📂 Kako pokrenuti
 
 1. Instaliraj Python 3.x
 2. Instaliraj potrebne biblioteke:
