@@ -79,7 +79,7 @@ Ovaj projekat se sastoji od sljedećih klasa i metoda:
 
 ### Rezultati i zaključak
 
-Najbolja pronađena distanca: `7544.37`
+Najbolja pronađena distanca: `7544.37` <br>
 ![Najbolje rješenje](img/best_solution.png) <br>
 Vizuelni prikaz najkraće rute pronađene tokom izvršavanja algoritma.
 
