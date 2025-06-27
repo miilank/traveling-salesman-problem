@@ -1,4 +1,4 @@
-## 🧬 Genetski algoritam - Problem putujućeg trgovca (TSP)
+## Genetski algoritam - Problem putujućeg trgovca (TSP)
 
 > Projektni zadatak iz predmeta **Nelinearno programiranje i evolutivni algoritmi**  
 > Univerzitet u Novom Sadu – Fakultet tehničkih nauka
@@ -10,7 +10,7 @@
 
 ---
 
-### 📌 Opis problema
+### Opis problema
 
 Problem putujućeg trgovca (TSP – _Travelling Salesman Problem_) predstavlja poznat optimizacioni problem: kako pronaći najkraću moguću zatvorenu rutu koja povezuje sve zadate gradove, tako da se svaki posjeti tačno jednom, a polazna i krajnja tačka budu isti grad.
 
@@ -24,7 +24,7 @@ Pošto broj mogućih ruta rapidno raste sa brojem gradova (n!), koristi se **gen
 
 ---
 
-### 🧠 Kratak uvod u genetski algoritam
+### Kratak uvod u genetski algoritam
 
 Genetski algoritam koristi principe prirodne selekcije:
 
@@ -37,7 +37,7 @@ Genetski algoritam koristi principe prirodne selekcije:
 
 ---
 
-### 🧠 Struktura projekta i metode
+### Struktura projekta i metode
 
 Ovaj projekat se sastoji od sljedećih klasa i metoda:
 
@@ -64,7 +64,7 @@ Ovaj projekat se sastoji od sljedećih klasa i metoda:
 
 ---
 
-### 🧪 Parametri algoritma
+### Parametri algoritma
 
 | Parametar                   | Vrijednost | Opis                                  |
 | --------------------------- | ---------- | ------------------------------------- |
@@ -77,7 +77,7 @@ Ovaj projekat se sastoji od sljedećih klasa i metoda:
 
 ---
 
-### 📈 Rezultati i zaključak
+### Rezultati i zaključak
 
 Najbolja pronađena distanca: `7544.37`
 ![Najbolje rješenje](img/best_solution.png) <br>
@@ -98,13 +98,13 @@ Ovo potvrđuje da algoritam pronalazi dobra približna rješenja sa vrlo malom v
 
 ---
 
-### 🖼️ Vizualizacija
+### Vizualizacija
 
 Na kraju izvršavanja algoritma, najbolja ruta se prikazuje grafički, kako je prikazano na slici. Gradovi su označeni brojevima, a linije povezuju gradove redosledom obilaska.
 
 ---
 
-### 📂 Kako pokrenuti
+### Kako pokrenuti
 
 1. Instaliraj Python 3.x
 2. Instaliraj potrebne biblioteke:
