@@ -18,7 +18,7 @@ Pošto broj mogućih ruta rapidno raste sa brojem gradova (n!), koristi se **gen
 
 ---
 
-### ⚙️ Tehnologije
+### Tehnologije
 
 - **Python 3.12.6**
 
